@@ -1,7 +1,7 @@
 import type { InertiaLinkProps } from '@inertiajs/react';
 import { usePage } from '@inertiajs/react';
 
-import { toUrl } from '@/lib/utils';
+import { resolveUrl } from '@/lib/utils';
 
 export function useActiveUrl() {
     const page = usePage();
@@ -12,7 +12,7 @@ export function useActiveUrl() {
         currentUrl?: string,
     ) {
         const urlToCompare = currentUrl ?? currentUrlPath;
-        return toUrl(urlToCheck) === urlToCompare;
+        return resolveUrl(urlToCheck) === urlToCompare;
     }
 
     return {

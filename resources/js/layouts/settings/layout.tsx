@@ -5,7 +5,7 @@ import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { useActiveUrl } from '@/hooks/use-active-url';
-import { cn, toUrl } from '@/lib/utils';
+import { cn, resolveUrl } from '@/lib/utils';
 import { edit as editAppearance } from '@/routes/appearance';
 import { edit } from '@/routes/profile';
 import { show } from '@/routes/two-factor';
@@ -58,7 +58,7 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
                     >
                         {sidebarNavItems.map((item, index) => (
                             <Button
-                                key={`${toUrl(item.href)}-${index}`}
+                                key={`${resolveUrl(item.href)}-${index}`}
                                 size="sm"
                                 variant="ghost"
                                 asChild

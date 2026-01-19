@@ -13,11 +13,11 @@ import {
     SidebarFooter,
     SidebarHeader,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
-import { edit as appearance } from '@/routes/appearance';
-import { edit as profile } from '@/routes/profile';
+import { channlabs, dashboard } from '@/routes';
+import { edit as editAppearance } from '@/routes/appearance';
+import { edit } from '@/routes/profile';
 import { show } from '@/routes/two-factor';
-import { edit as password } from '@/routes/user-password';
+import { edit as editPassword } from '@/routes/user-password';
 
 import { NavUser } from './nav-user';
 import { TeamSwitcher } from './team-switcher';
@@ -38,6 +38,10 @@ const platformNavItems = [
         icon: Layout06Icon,
         items: [
             {
+                title: 'Chann Labs Starter Kit',
+                url: channlabs(),
+            },
+            {
                 title: 'Overview',
                 url: dashboard(),
             },
@@ -53,11 +57,11 @@ const settingsNavItems = [
         items: [
             {
                 title: 'Profile',
-                url: profile(),
+                url: edit(),
             },
             {
                 title: 'Password',
-                url: password(),
+                url: editPassword(),
             },
             {
                 title: 'Two-Factor Auth',
@@ -65,7 +69,7 @@ const settingsNavItems = [
             },
             {
                 title: 'Appearance',
-                url: appearance(),
+                url: editAppearance(),
             },
         ],
     },
