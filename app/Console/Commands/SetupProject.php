@@ -96,4 +96,18 @@ class SetupProject extends Command
         $this->line('<fg=cyan>║                                              ║</>');
         $this->line('<fg=cyan>╚══════════════════════════════════════════════╝</>');
     }
+
+    protected function simulateProgress()
+    {
+        $bar = $this->output->createProgressBar(20);
+        $bar->start();
+
+        for ($i = 0; $i < 20; $i++) {
+            usleep(50000); // 0.05 detik
+            $bar->advance();
+        }
+
+        $bar->finish();
+        $this->line('');
+    }
 }
