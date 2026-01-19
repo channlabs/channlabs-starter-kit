@@ -49,4 +49,5 @@ jobs:
         run: php artisan key:generate
 
       - name: Tests
-        run: ./vendor/bin/phpunit
+        # run: ./vendor/bin/phpunit
+        run: php artisan test
