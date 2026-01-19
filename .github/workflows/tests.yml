@@ -50,4 +50,4 @@ jobs:
 
       - name: Tests
         # run: ./vendor/bin/phpunit
-        run: php artisan test
+        run: ./vendor/bin/pest
