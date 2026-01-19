@@ -4,7 +4,6 @@ import {
     CodeIcon,
     DatabaseIcon,
     GithubIcon,
-    type IconSvgObject,
     LayersIcon,
     LockPasswordIcon,
     PackageIcon,
@@ -16,7 +15,7 @@ import {
     ZapFreeIcons,
     SmartPhone01FreeIcons,
 } from '@hugeicons/core-free-icons';
-import { HugeiconsIcon } from '@hugeicons/react';
+import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
 import { Head, Link, usePage } from '@inertiajs/react';
 
 import AppearanceToggle from '@/components/appearance';
@@ -352,7 +351,7 @@ function FeatureCard({
     title,
     description,
 }: {
-    icon: IconSvgObject;
+    icon: IconSvgElement;
     title: string;
     description: string;
 }) {
@@ -381,7 +380,7 @@ function TechCard({
     name,
     description,
 }: {
-    icon: IconSvgObject;
+    icon: IconSvgElement;
     name: string;
     description: string;
 }) {
