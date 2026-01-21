@@ -5,6 +5,7 @@ import { LoaderCircle } from 'lucide-react';
 import InputError from '@/components/input-error';
 import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
+import { CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
@@ -26,24 +27,29 @@ export default function ForgotPassword({ status }: { status?: string }) {
             )}
 
             <div className="space-y-6">
-                <Form {...email.form()}>
+                <Form {...email.form()} className="flex flex-col gap-6">
                     {({ processing, errors }) => (
                         <>
-                            <div className="grid gap-2">
-                                <Label htmlFor="email">Email address</Label>
-                                <Input
-                                    id="email"
-                                    type="email"
-                                    name="email"
-                                    autoComplete="off"
-                                    autoFocus
-                                    placeholder="email@example.com"
-                                />
+                            <CardContent>
+                                <>
+                                    <div className="grid gap-2">
+                                        <Label htmlFor="email">
+                                            Email address
+                                        </Label>
+                                        <Input
+                                            id="email"
+                                            type="email"
+                                            name="email"
+                                            autoComplete="off"
+                                            autoFocus
+                                            placeholder="email@example.com"
+                                        />
 
-                                <InputError message={errors.email} />
-                            </div>
-
-                            <div className="my-6 flex items-center justify-start">
+                                        <InputError message={errors.email} />
+                                    </div>
+                                </>
+                            </CardContent>
+                            <CardFooter className="flex-col gap-2">
                                 <Button
                                     className="w-full"
                                     disabled={processing}
@@ -54,15 +60,14 @@ export default function ForgotPassword({ status }: { status?: string }) {
                                     )}
                                     Email password reset link
                                 </Button>
-                            </div>
+                                <div className="space-x-1 text-center text-sm text-muted-foreground">
+                                    <span>Or, return to</span>
+                                    <TextLink href={login()}>log in</TextLink>
+                                </div>
+                            </CardFooter>
                         </>
                     )}
                 </Form>
-
-                <div className="space-x-1 text-center text-sm text-muted-foreground">
-                    <span>Or, return to</span>
-                    <TextLink href={login()}>log in</TextLink>
-                </div>
             </div>
         </AuthLayout>
     );

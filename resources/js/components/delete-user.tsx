@@ -11,6 +11,7 @@ import {
     DialogContent,
     DialogDescription,
     DialogFooter,
+    DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from '@/components/ui/dialog';
@@ -35,24 +36,29 @@ export default function DeleteUser() {
                 </div>
 
                 <Dialog>
-                    <DialogTrigger asChild>
-                        <Button
-                            variant="destructive"
-                            data-test="delete-user-button"
-                        >
-                            Delete account
-                        </Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                        <DialogTitle>
-                            Are you sure you want to delete your account?
-                        </DialogTitle>
-                        <DialogDescription>
-                            Once your account is deleted, all of its resources
-                            and data will also be permanently deleted. Please
-                            enter your password to confirm you would like to
-                            permanently delete your account.
-                        </DialogDescription>
+                    <DialogTrigger
+                        render={
+                            <Button
+                                variant="destructive"
+                                data-test="delete-user-button"
+                            >
+                                Delete account
+                            </Button>
+                        }
+                    />
+                    <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                            <DialogTitle>
+                                Are you sure you want to delete your account?
+                            </DialogTitle>
+                            <DialogDescription>
+                                Once your account is deleted, all of its
+                                resources and data will also be permanently
+                                deleted. Please enter your password to confirm
+                                you would like to permanently delete your
+                                account.
+                            </DialogDescription>
+                        </DialogHeader>
 
                         <Form
                             {...ProfileController.destroy.form()}
@@ -86,28 +92,26 @@ export default function DeleteUser() {
                                     </div>
 
                                     <DialogFooter className="gap-2">
-                                        <DialogClose asChild>
-                                            <Button
-                                                variant="secondary"
-                                                onClick={() =>
-                                                    resetAndClearErrors()
-                                                }
-                                            >
-                                                Cancel
-                                            </Button>
-                                        </DialogClose>
+                                        <DialogClose
+                                            render={
+                                                <Button
+                                                    variant="secondary"
+                                                    onClick={() =>
+                                                        resetAndClearErrors()
+                                                    }
+                                                >
+                                                    Cancel
+                                                </Button>
+                                            }
+                                        />
 
                                         <Button
                                             variant="destructive"
+                                            type="submit"
                                             disabled={processing}
-                                            asChild
+                                            data-test="confirm-delete-user-button"
                                         >
-                                            <button
-                                                type="submit"
-                                                data-test="confirm-delete-user-button"
-                                            >
-                                                Delete account
-                                            </button>
+                                            Delete account
                                         </Button>
                                     </DialogFooter>
                                 </>

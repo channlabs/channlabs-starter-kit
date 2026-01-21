@@ -1,12 +1,9 @@
 import { Link } from '@inertiajs/react';
 import { type PropsWithChildren } from 'react';
 
-import { Button } from '@/components/ui/button';
 import {
     Card,
-    CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
@@ -32,7 +29,13 @@ export default function AuthCardLayout({
                 </Link>
 
                 <div className="flex flex-col gap-6">
-                    {children}
+                    <Card>
+                        <CardHeader className="text-center">
+                            <CardTitle className="text-xl">{title}</CardTitle>
+                            <CardDescription>{description}</CardDescription>
+                        </CardHeader>
+                        {children}
+                    </Card>
                 </div>
             </div>
         </div>

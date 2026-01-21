@@ -2,6 +2,7 @@ import { Form, Head } from '@inertiajs/react';
 
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
+import { CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
@@ -16,25 +17,31 @@ export default function ConfirmPassword() {
         >
             <Head title="Confirm password" />
 
-            <Form {...store.form()} resetOnSuccess={['password']}>
+            <Form
+                {...store.form()}
+                resetOnSuccess={['password']}
+                className="flex flex-col gap-6"
+            >
                 {({ processing, errors }) => (
-                    <div className="space-y-6">
-                        <div className="grid gap-2">
-                            <Label htmlFor="password">Password</Label>
-                            <Input
-                                id="password"
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                autoComplete="current-password"
-                                autoFocus
-                            />
+                    <>
+                        <CardContent>
+                            <div className="grid gap-2">
+                                <Label htmlFor="password">Password</Label>
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    autoComplete="current-password"
+                                    autoFocus
+                                />
 
-                            <InputError message={errors.password} />
-                        </div>
-
-                        <div className="flex items-center">
+                                <InputError message={errors.password} />
+                            </div>
+                        </CardContent>
+                        <CardFooter>
                             <Button
+                                type="submit"
                                 className="w-full"
                                 disabled={processing}
                                 data-test="confirm-password-button"
@@ -42,8 +49,8 @@ export default function ConfirmPassword() {
                                 {processing && <Spinner />}
                                 Confirm password
                             </Button>
-                        </div>
-                    </div>
+                        </CardFooter>
+                    </>
                 )}
             </Form>
         </AuthLayout>

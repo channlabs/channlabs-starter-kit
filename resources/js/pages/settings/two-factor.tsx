@@ -77,7 +77,8 @@ export default function TwoFactor({
                                             type="submit"
                                             disabled={processing}
                                         >
-                                            <ShieldBan /> Disable 2FA
+                                            <ShieldBan data-icon="inline-start" />{' '}
+                                            Disable 2FA
                                         </Button>
                                     )}
                                 </Form>
@@ -98,7 +99,7 @@ export default function TwoFactor({
                                     <Button
                                         onClick={() => setShowSetupModal(true)}
                                     >
-                                        <ShieldCheck />
+                                        <ShieldCheck data-icon="inline-start" />
                                         Continue Setup
                                     </Button>
                                 ) : (
@@ -113,7 +114,7 @@ export default function TwoFactor({
                                                 type="submit"
                                                 disabled={processing}
                                             >
-                                                <ShieldCheck />
+                                                <ShieldCheck data-icon="inline-start" />
                                                 Enable 2FA
                                             </Button>
                                         )}

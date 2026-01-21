@@ -71,9 +71,11 @@ export default function Welcome({
                         <nav className="flex items-center gap-2 sm:gap-4">
                             <AppearanceToggle />
                             {auth.user ? (
-                                <Button asChild variant="outline">
-                                    <Link href={dashboard()}>Dashboard</Link>
-                                </Button>
+                                <Link href={dashboard()}>
+                                    <Button variant="outline">
+                                        Dashboard
+                                    </Button>
+                                </Link>
                             ) : (
                                 <>
                                     <Link
@@ -83,14 +85,13 @@ export default function Welcome({
                                         Log in
                                     </Link>
                                     {canRegister && (
-                                        <Button
-                                            asChild
-                                            className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                                        >
-                                            <Link href={register()}>
+                                        <Link href={register()}>
+                                            <Button
+                                                className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
+                                            >
                                                 Get Started
-                                            </Link>
-                                        </Button>
+                                            </Button>
+                                        </Link>
                                     )}
                                 </>
                             )}
@@ -124,32 +125,30 @@ export default function Welcome({
                     </p>
 
                     <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                        <Button
-                            asChild
-
-                            className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                        >
-                            <Link href={register()}>
+                        <Link href={register()}>
+                            <Button
+                                className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
+                            >
                                 <HugeiconsIcon
                                     icon={Rocket01Icon}
                                     size={18}
                                     strokeWidth={2}
-                                    className="mr-2"
+                                    data-icon="inline-start"
                                 />
                                 Start Building Now
-                            </Link>
-                        </Button>
-                        <Button asChild variant="outline">
-                            <a href="https://github.com/channlabs/channlabs-starter-kit">
+                            </Button>
+                        </Link>
+                        <a href="https://github.com/channlabs/channlabs-starter-kit">
+                            <Button variant="outline">
                                 <HugeiconsIcon
                                     icon={GithubIcon}
                                     size={18}
                                     strokeWidth={2}
-                                    className="mr-2"
+                                    data-icon="inline-start"
                                 />
                                 View on GitHub
-                            </a>
-                        </Button>
+                            </Button>
+                        </a>
                     </div>
 
                 </section>
@@ -272,24 +271,24 @@ export default function Welcome({
                             Channlabs Starter Kit
                         </p>
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-                            <Button
-                                asChild
-
-                                className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                            >
-                                <Link href={register()}>Get Started Free</Link>
-                            </Button>
-                            <Button asChild variant="outline">
-                                <a href="#">
+                            <Link href={register()}>
+                                <Button
+                                    className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
+                                >
+                                    Get Started Free
+                                </Button>
+                            </Link>
+                            <a href="#">
+                                <Button variant="outline">
                                     <HugeiconsIcon
                                         icon={Book03Icon}
                                         size={18}
                                         strokeWidth={2}
-                                        className="mr-2"
+                                        data-icon="inline-start"
                                     />
                                     Read Documentation
-                                </a>
-                            </Button>
+                                </Button>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -356,7 +355,7 @@ function FeatureCard({
     description: string;
 }) {
     return (
-        <div className="group rounded-2xl border bg-muted-foreground/2 p-6 backdrop-blur transition-all hover:border-blue-500/50">
+        <div className="group rounded-2xl border bg-muted-foreground/2 p-6 backdrop-blur transition-colors hover:border-blue-500/50">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/10 transition-transform group-hover:scale-110">
                 <HugeiconsIcon
                     icon={icon}
@@ -385,7 +384,7 @@ function TechCard({
     description: string;
 }) {
     return (
-        <div className="rounded-2xl border bg-muted-foreground/2 p-6 text-center backdrop-blur transition-all hover:border-blue-500/50">
+        <div className="rounded-2xl border bg-muted-foreground/2 p-6 text-center backdrop-blur hover:border-blue-500/50">
             <div className="mb-3 flex justify-center">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10">
                     <HugeiconsIcon
