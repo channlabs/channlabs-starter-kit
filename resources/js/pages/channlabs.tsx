@@ -38,8 +38,8 @@ export default function Channlabs() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Chann Labs Starter Kit" />
-            <div className="flex gap-3 p-3">
-                <Card size="sm" className="w-full max-w-xs self-start">
+            <div className="grid grid-cols-1 gap-3 p-3 md:grid-cols-2 lg:grid-cols-4">
+                <Card size="sm" className="w-full self-start">
                     <CardHeader>
                         <CardTitle>Card</CardTitle>
                         <CardDescription>
@@ -92,7 +92,7 @@ export default function Channlabs() {
                         </Button>
                     </CardFooter>
                 </Card>
-                <Card className="relative w-full max-w-sm pt-0">
+                <Card className="relative w-full pt-0">
                     <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
                     <img
                         src="https://avatar.vercel.sh/shadcn1"
@@ -114,7 +114,7 @@ export default function Channlabs() {
                     </CardFooter>
                 </Card>
 
-                <Card size="sm" className="w-full max-w-xs self-start">
+                <Card size="sm" className="w-full self-start">
                     <CardHeader>
                         <CardTitle>Sonner</CardTitle>
                         <CardDescription>
@@ -199,7 +199,7 @@ export default function Channlabs() {
                     </CardContent>
                 </Card>
 
-                <Card size="sm" className="w-full max-w-xs self-start">
+                <Card size="sm" className="w-full self-start">
                     <CardHeader>
                         <CardTitle>Select</CardTitle>
                         <CardDescription>
