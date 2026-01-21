@@ -19,6 +19,7 @@ import { edit } from '@/routes/profile';
 import { show } from '@/routes/two-factor';
 import { edit as editPassword } from '@/routes/user-password';
 
+import { NavMenu } from './nav-menu';
 import { NavUser } from './nav-user';
 import { TeamSwitcher } from './team-switcher';
 
@@ -28,6 +29,14 @@ const teams = [
         logo: AiProgrammingIcon,
         plan: 'v1.0.0',
         href: dashboard(),
+    },
+];
+
+const menuNavItems = [
+    {
+        title: 'Dashboard',
+        url: dashboard(),
+        icon: Layout06Icon,
     },
 ];
 
@@ -96,6 +105,7 @@ export function AppSidebar() {
             </SidebarHeader>
 
             <SidebarContent>
+                <NavMenu title="Menu" items={menuNavItems} />
                 <NavMain title="Platform" items={platformNavItems} />
                 <NavMain title="Settings" items={settingsNavItems} />
             </SidebarContent>

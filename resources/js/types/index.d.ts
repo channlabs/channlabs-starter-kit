@@ -41,3 +41,16 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface ProductTypes {
+    id: string
+    name: string
+    category: string
+    size: string
+    cost_price: number
+    sell_price: number
+    stock: number
+    status: "active" | "inactive" | "out-of-stock"
+    [key: string]: unknown;
+}
+
