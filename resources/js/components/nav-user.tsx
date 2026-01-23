@@ -29,17 +29,21 @@ export function NavUser() {
         <SidebarMenu>
             <SidebarMenuItem>
                 <DropdownMenu>
-                    <DropdownMenuTrigger render={<SidebarMenuButton
-                        size="lg"
-                        className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-                        data-test="sidebar-menu-button"
+                    <DropdownMenuTrigger
+                        render={
+                            <SidebarMenuButton
+                                size="lg"
+                                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                                data-test="sidebar-menu-button"
+                            >
+                                <UserInfo user={auth.user} showEmail={true} />
+                                <HugeiconsIcon
+                                    icon={UnfoldMoreIcon}
+                                    className="ml-auto size-4"
+                                />
+                            </SidebarMenuButton>
+                        }
                     >
-                        <UserInfo user={auth.user} showEmail={true} />
-                        <HugeiconsIcon
-                            icon={UnfoldMoreIcon}
-                            className="ml-auto size-4"
-                        />
-                    </SidebarMenuButton>}>
                         Open
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
@@ -49,8 +53,8 @@ export function NavUser() {
                             isMobile
                                 ? 'bottom'
                                 : state === 'collapsed'
-                                    ? 'left'
-                                    : 'right'
+                                  ? 'left'
+                                  : 'right'
                         }
                     >
                         <DropdownMenuGroup>

@@ -42,31 +42,35 @@ export function TeamSwitcher({
         <SidebarMenu>
             <SidebarMenuItem>
                 <DropdownMenu>
-                    <DropdownMenuTrigger render={<SidebarMenuButton
-                        size="lg"
-                        className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                    <DropdownMenuTrigger
+                        render={
+                            <SidebarMenuButton
+                                size="lg"
+                                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                            >
+                                <div className="flex aspect-square size-8 items-center justify-center text-sidebar-primary">
+                                    <HugeiconsIcon
+                                        icon={activeTeam.logo}
+                                        size={20}
+                                        strokeWidth={1.5}
+                                    />
+                                </div>
+                                <div className="leading-tighter grid flex-1 text-left text-sm">
+                                    <span className="truncate font-mona font-bold tracking-tighter">
+                                        {activeTeam.name}
+                                    </span>
+                                    <span className="truncate text-xs">
+                                        {activeTeam.plan}
+                                    </span>
+                                </div>
+                                <HugeiconsIcon
+                                    icon={UnfoldMoreIcon}
+                                    size={20}
+                                    strokeWidth={2}
+                                />
+                            </SidebarMenuButton>
+                        }
                     >
-                        <div className="flex aspect-square size-8 items-center justify-center text-sidebar-primary-foreground">
-                            <HugeiconsIcon
-                                icon={activeTeam.logo}
-                                size={20}
-                                strokeWidth={2}
-                            />
-                        </div>
-                        <div className="leading-tighter grid flex-1 text-left text-sm">
-                            <span className="truncate font-mona font-bold tracking-tighter">
-                                {activeTeam.name}
-                            </span>
-                            <span className="truncate text-xs">
-                                {activeTeam.plan}
-                            </span>
-                        </div>
-                        <HugeiconsIcon
-                            icon={UnfoldMoreIcon}
-                            size={20}
-                            strokeWidth={2}
-                        />
-                    </SidebarMenuButton>}>
                         Open
                     </DropdownMenuTrigger>
                     <DropdownMenuContent

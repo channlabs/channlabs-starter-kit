@@ -87,7 +87,11 @@ export default function Channlabs() {
                         <Button size="sm" className="w-full">
                             Set up scheduled reports
                         </Button>
-                        <Button variant="outline" size="sm" className="w-full">
+                        <Button
+                            variant="outline"
+                            size={'sm'}
+                            className="w-full"
+                        >
                             See what&apos;s new
                         </Button>
                     </CardFooter>
@@ -125,6 +129,7 @@ export default function Channlabs() {
                         <div className="flex flex-wrap justify-center gap-2">
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'top-left',
@@ -135,6 +140,7 @@ export default function Channlabs() {
                             </Button>
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'top-center',
@@ -145,6 +151,7 @@ export default function Channlabs() {
                             </Button>
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'top-right',
@@ -155,6 +162,7 @@ export default function Channlabs() {
                             </Button>
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'bottom-left',
@@ -165,6 +173,7 @@ export default function Channlabs() {
                             </Button>
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'bottom-center',
@@ -175,6 +184,7 @@ export default function Channlabs() {
                             </Button>
                             <Button
                                 variant="outline"
+                                size={'sm'}
                                 onClick={() =>
                                     toast('Event has been created', {
                                         position: 'bottom-right',
@@ -191,6 +201,7 @@ export default function Channlabs() {
                                     })
                                 }
                                 variant="outline"
+                                size={'sm'}
                                 className="w-fit"
                             >
                                 Show Toast

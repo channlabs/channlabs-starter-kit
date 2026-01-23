@@ -9,11 +9,11 @@ import {
     PackageIcon,
     Rocket01Icon,
     ShieldEnergyIcon,
+    SmartPhone01FreeIcons,
     SourceCodeIcon,
     SparklesIcon,
     UserMultiple02Icon,
     ZapFreeIcons,
-    SmartPhone01FreeIcons,
 } from '@hugeicons/core-free-icons';
 import { HugeiconsIcon, type IconSvgElement } from '@hugeicons/react';
 import { Head, Link, usePage } from '@inertiajs/react';
@@ -52,7 +52,7 @@ export default function Welcome({
                 </div>
 
                 {/* Header */}
-                <header className="sticky top-0 z-20 w-full bg-background/40 backdrop-blur-md transition-colors">
+                <header className="sticky top-0 z-20 w-full bg-background/40 backdrop-blur-md transition-all">
                     <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
                         <div className="flex items-center gap-2">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-blue-500 to-blue-600">
@@ -64,7 +64,8 @@ export default function Welcome({
                                 />
                             </div>
                             <span className="font-mona text-xl font-bold tracking-tighter">
-                                chann<span className="text-blue-500">labs_</span>
+                                chann
+                                <span className="text-blue-500">labs_</span>
                             </span>
                         </div>
 
@@ -72,23 +73,19 @@ export default function Welcome({
                             <AppearanceToggle />
                             {auth.user ? (
                                 <Link href={dashboard()}>
-                                    <Button variant="outline">
-                                        Dashboard
-                                    </Button>
+                                    <Button variant="outline">Dashboard</Button>
                                 </Link>
                             ) : (
                                 <>
                                     <Link
                                         href={login()}
-                                        className="px-5 py-2 text-sm font-medium transition-colors hover:text-blue-500"
+                                        className="px-5 py-2 text-sm font-medium transition-all hover:text-blue-500"
                                     >
                                         Log in
                                     </Link>
                                     {canRegister && (
                                         <Link href={register()}>
-                                            <Button
-                                                className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                                            >
+                                            <Button className="bg-blue-500 text-white transition-all hover:bg-blue-600">
                                                 Get Started
                                             </Button>
                                         </Link>
@@ -112,23 +109,19 @@ export default function Welcome({
 
                     <h1 className="max-w-4xl font-mona text-5xl font-extrabold tracking-tighter sm:text-7xl">
                         Build SaaS Apps{' '}
-                        <span className="text-blue-500">
-                            10x Faster
-                        </span>
+                        <span className="text-blue-500">10x Faster</span>
                     </h1>
 
-                    <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground ">
+                    <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
                         The ultimate Laravel + React starter kit with
-                        authentication, multi-tenancy, licensing, and premium
-                        UI components. Everything you need to launch your next
+                        authentication, multi-tenancy, licensing, and premium UI
+                        components. Everything you need to launch your next
                         project.
                     </p>
 
                     <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                         <Link href={register()}>
-                            <Button
-                                className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                            >
+                            <Button className="transition-allhover:bg-blue-600 bg-blue-500 text-white">
                                 <HugeiconsIcon
                                     icon={Rocket01Icon}
                                     size={18}
@@ -150,7 +143,6 @@ export default function Welcome({
                             </Button>
                         </a>
                     </div>
-
                 </section>
 
                 {/* Features Grid */}
@@ -262,9 +254,7 @@ export default function Welcome({
                     <div className="rounded-2xl border border-blue-500/20 bg-linear-to-br from-blue-500/10 to-blue-700/10 p-12 backdrop-blur">
                         <h2 className="font-mona text-3xl font-bold tracking-tighter sm:text-5xl">
                             Ready to Build Something{' '}
-                            <span className="text-blue-500">
-                                Amazing?
-                            </span>
+                            <span className="text-blue-500">Amazing?</span>
                         </h2>
                         <p className="mt-4 text-muted-foreground">
                             Join developers who are building faster with
@@ -272,9 +262,7 @@ export default function Welcome({
                         </p>
                         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                             <Link href={register()}>
-                                <Button
-                                    className="bg-blue-500 text-white transition-colors hover:bg-blue-600"
-                                >
+                                <Button className="bg-blue-500 text-white transition-all hover:bg-blue-600">
                                     Get Started Free
                                 </Button>
                             </Link>
@@ -306,7 +294,7 @@ export default function Welcome({
                         <div className="flex gap-6">
                             <a
                                 href="https://github.com/channlabs/channlabs-starter-kit"
-                                className="flex items-center gap-2 transition-colors hover:text-blue-500"
+                                className="transition-allhover:text-blue-500 flex items-center gap-2"
                             >
                                 <HugeiconsIcon
                                     icon={GithubIcon}
@@ -317,7 +305,7 @@ export default function Welcome({
                             </a>
                             <a
                                 href="#"
-                                className="flex items-center gap-2 transition-colors hover:text-blue-500"
+                                className="flex items-center gap-2 transition-all hover:text-blue-500"
                             >
                                 <HugeiconsIcon
                                     icon={Book03Icon}
@@ -328,7 +316,7 @@ export default function Welcome({
                             </a>
                             <a
                                 href="https://chann.id"
-                                className="flex items-center gap-2 transition-colors hover:text-blue-500"
+                                className="transition-allhover:text-blue-500 flex items-center gap-2"
                             >
                                 <HugeiconsIcon
                                     icon={SmartPhone01FreeIcons}
@@ -355,7 +343,7 @@ function FeatureCard({
     description: string;
 }) {
     return (
-        <div className="group rounded-2xl border bg-muted-foreground/2 p-6 backdrop-blur transition-colors hover:border-blue-500/50">
+        <div className="group rounded-2xl border bg-muted-foreground/2 p-6 backdrop-blur hover:border-blue-500/50">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/10 transition-transform group-hover:scale-110">
                 <HugeiconsIcon
                     icon={icon}
@@ -395,9 +383,7 @@ function TechCard({
                     />
                 </div>
             </div>
-            <h4 className="font-mona  font-bold tracking-tighter">
-                {name}
-            </h4>
+            <h4 className="font-mona font-bold tracking-tighter">{name}</h4>
             <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         </div>
     );
